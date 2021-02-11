@@ -1,3 +1,5 @@
+<x-header data="User Component Header" />
+
 <h1>User Page {{$name}}</h1>
 
 <a href="/">Welcome</a> <br>

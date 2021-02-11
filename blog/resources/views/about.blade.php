@@ -1,3 +1,6 @@
+<!-- memanggil komponen -->
+<x-header data="About Component Header" />
+
 <h1>About Page</h1>
 
 <a href="/">Welcome</a> <br>

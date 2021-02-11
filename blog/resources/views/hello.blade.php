@@ -1,3 +1,5 @@
+<x-header data="Hello Component Header" />
+
 <h1>Hello Page</h1>
 
 <a href="/">Welcome</a> <br>
