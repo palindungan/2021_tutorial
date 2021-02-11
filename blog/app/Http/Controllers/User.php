@@ -9,7 +9,10 @@ class User extends Controller
     // index
     public function index($name)
     {
-        echo $name . " from controller";
+        // echo $name . " from controller";
+        return view('user', [
+            'name' => $name
+        ]);
     }
 
     public function api()

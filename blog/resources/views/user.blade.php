@@ -1,4 +1,4 @@
-<h1>User Page</h1>
+<h1>User Page {{$name}}</h1>
 
 <a href="/">Welcome</a> <br>
 <a href="/about">About Us</a> <br>

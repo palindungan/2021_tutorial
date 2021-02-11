@@ -18,21 +18,21 @@ use App\Http\Controllers\User;
 //     return view('welcome', ['name' => $name]);
 // });
 
-// Route::get('/user', function () {
-//     return view('user');
-// });
+Route::get('/user', function () {
+    return view('user');
+});
 
-// Route::get('/hello', function () {
-//     return view('hello');
-// });
+Route::get('/hello', function () {
+    return view('hello');
+});
 
-// Route::get('/about', function () {
-//     return view('about');
-// });
+Route::get('/about', function () {
+    return view('about');
+});
 
-// Route::get('/contact', function () {
-//     return view('contact');
-// });
+Route::get('/contact', function () {
+    return view('contact');
+});
 
 Route::get('/', function () {
     return view('welcome');
