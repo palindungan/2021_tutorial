@@ -1,4 +1,4 @@
-<h1>Hello Page</h1>
+<h1>About Page</h1>
 
 <a href="/">Welcome</a> <br>
 <a href="/about">About Us</a> <br>
