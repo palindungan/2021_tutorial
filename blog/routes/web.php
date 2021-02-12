@@ -45,3 +45,5 @@ use App\Http\Controllers\UserController;
 // Route::get("/api", [User::class, 'api']);
 
 Route::get('/user', [UserController::class, 'viewLoad']);
+
+Route::get('/user/db', [UserController::class, 'selectDB']);

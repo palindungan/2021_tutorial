@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -11,5 +12,11 @@ class UserController extends Controller
     {
         $data = ['rizkika', 'zakka', 'palindungan'];
         return view('user', ['users' => $data]);
+    }
+
+    public function selectDB()
+    {
+
+        return DB::select('select * from user');
     }
 }
