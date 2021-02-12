@@ -44,6 +44,10 @@ use App\Http\Controllers\UserController;
 
 // Route::get("/api", [User::class, 'api']);
 
-Route::get('/user', [UserController::class, 'viewLoad']);
+// Route::get('/user', [UserController::class, 'viewLoad']);
 
-Route::get('/user/db', [UserController::class, 'selectDB']);
+// Route::get('/user/db', [UserController::class, 'selectDB']);
+
+Route::get('/user/login', [UserController::class, 'loginForm']);
+
+Route::post('/user/loginAction', [UserController::class, 'loginAction']);

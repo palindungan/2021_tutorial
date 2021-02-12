@@ -19,4 +19,14 @@ class UserController extends Controller
 
         return DB::select('select * from user');
     }
+
+    public function loginForm()
+    {
+        return view('login');
+    }
+
+    public function loginAction(Request $request)
+    {
+        return $request->input();
+    }
 }
