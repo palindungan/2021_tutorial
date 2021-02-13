@@ -14,3 +14,5 @@
     <br> <br>
     <button type="submit">Login</button>
 </form>
+
+@include('inner')
