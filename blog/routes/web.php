@@ -48,14 +48,24 @@ use App\Http\Controllers\UserController;
 
 // Route::get('/user/db', [UserController::class, 'selectDB']);
 
+Route::get('/noaccess', function () {
+    return view('noaccess');
+});
+
+Route::get('/home', function () {
+    return view('home');
+})->middleware('protectedPage');
+
 Route::get('/user/login', [UserController::class, 'loginForm']);
 
 Route::post('/user/loginAction', [UserController::class, 'loginAction']);
 
-Route::get('/home', function () {
-    return view('home');
-});
+// Route::group(['middleware' => 'protectedPage'], function () {
+//     Route::get('/home', function () {
+//         return view('home');
+//     });
 
-Route::get('/noaccess', function () {
-    return view('noaccess');
-});
+//     Route::get('/user/login', [UserController::class, 'loginForm']);
+
+//     Route::post('/user/loginAction', [UserController::class, 'loginAction']);
+// });
