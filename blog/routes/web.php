@@ -64,6 +64,17 @@ Route::get('/user/getData', [UserController::class, 'getData']);
 
 Route::get('/user/', [UserController::class, 'index']);
 
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+Route::get('/logout', function () {
+    if (session()->has('username')) {
+        session()->pull('username');
+    }
+    return redirect('/user/login');
+});
+
 // Route::group(['middleware' => 'protectedPage'], function () {
 //     Route::get('/home', function () {
 //         return view('home');

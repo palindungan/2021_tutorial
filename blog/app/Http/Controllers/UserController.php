@@ -31,7 +31,11 @@ class UserController extends Controller
 
     public function loginForm()
     {
-        return view('login');
+        if (session()->has('username')) {
+            return redirect('/profile');
+        } else {
+            return view('login');
+        }
     }
 
     public function loginAction(Request $request)
@@ -40,7 +44,12 @@ class UserController extends Controller
             'username' => 'required | max :10',
             'password' => 'required | min :4'
         ]);
-        return $request->input();
+        $data = $request->input();
+
+        $request->session()->put('username', $data['username']);
+        $request->session()->put('password', $data['password']);
+
+        return redirect('/profile');
     }
 
     public function getData()

@@ -1,5 +1,7 @@
 <h1>User Login</h1>
 
+<h2>Username : {{ session('username') }}</h2>
+
 <form action="/user/loginAction" method="POST">
     {{ method_field('POST') }}
     @csrf
