@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Symfony\Contracts\Service\Attribute\Required;
 use Illuminate\Support\Facades\DB; // menggunakan fitur Data base menegement
 use App\Models\User; // menanggil model
 use Illuminate\Support\Facades\Http; // menggunakan Http Client

@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers\User;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,3 +84,9 @@ Route::get('/logout', function () {
 
 //     Route::post('/user/loginAction', [UserController::class, 'loginAction']);
 // });
+
+Route::get('/upload', function () {
+    return view('upload');
+});
+
+Route::post('/upload/action', [UploadController::class, 'index']);
