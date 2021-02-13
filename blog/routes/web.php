@@ -51,3 +51,11 @@ use App\Http\Controllers\UserController;
 Route::get('/user/login', [UserController::class, 'loginForm']);
 
 Route::post('/user/loginAction', [UserController::class, 'loginAction']);
+
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::get('/noaccess', function () {
+    return view('noaccess');
+});
