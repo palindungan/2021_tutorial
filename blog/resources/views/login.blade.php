@@ -1,6 +1,7 @@
 <h1>User Login</h1>
 
 <form action="/user/loginAction" method="POST">
+    {{ method_field('POST') }}
     @csrf
     <input type="text" name="username" id="username" placeholder="Isi Nama Anda">
     <span style="color: red">
