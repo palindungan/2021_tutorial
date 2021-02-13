@@ -1,7 +1,5 @@
-<h1>Hello Page</h1>
-<br><br>
+<h1>{{ __('profile.welcome') }}</h1>
 
-<h2>WELCOME {{ session('username') }}</h2>
-
-<br>
-<a href="/logout">Logout</a>
+<a href="">{{ __('profile.about') }}</a>
+<a href="">{{ __('profile.contact') }}</a>
+<a href="">{{ __('profile.list') }}</a>

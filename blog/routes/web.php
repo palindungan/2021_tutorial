@@ -64,7 +64,8 @@ Route::get('/user/getData', [UserController::class, 'getData']);
 
 Route::get('/user/', [UserController::class, 'index']);
 
-Route::get('/profile', function () {
+Route::get('/profile/{lang}', function ($lang) {
+    App::setlocale($lang);
     return view('profile');
 });
 
