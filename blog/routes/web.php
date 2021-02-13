@@ -62,6 +62,8 @@ Route::post('/user/loginAction', [UserController::class, 'loginAction']);
 
 Route::get('/user/getData', [UserController::class, 'getData']);
 
+Route::get('/user/', [UserController::class, 'index']);
+
 // Route::group(['middleware' => 'protectedPage'], function () {
 //     Route::get('/home', function () {
 //         return view('home');

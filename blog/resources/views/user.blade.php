@@ -2,9 +2,23 @@
 
 <h1>User Page</h1>
 
-@foreach ($users as $item)
-<h3>{{$item}}</h3>
-@endforeach
+<table border="1">
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Avatar</td>
+    </tr>
+
+    @foreach ($collection as $item)
+        <tr>
+            <td>{{ $item['id'] }}</td>
+            <td>{{ $item['first_name'] }} {{ $item['last_name'] }}</td>
+            <td>{{ $item['email'] }}</td>
+            <td><img src="{{ $item['avatar'] }}" alt=""></td>
+        </tr>
+    @endforeach
+</table>
 
 @include('inner')
 
@@ -15,6 +29,5 @@
 <a href="/user">User</a> <br>
 
 <script>
-    var data = @json($users);
-    console.warn(data[1]);
+    // script js disini
 </script>

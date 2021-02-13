@@ -3,13 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Symfony\Contracts\Service\Attribute\Required;
-use App\Models\User;
+use Illuminate\Support\Facades\DB; // menggunakan fitur Data base menegement
+use App\Models\User; // menanggil model
+use Illuminate\Support\Facades\Http; // menggunakan Http Client
 
 class UserController extends Controller
 {
     //
+    public function index()
+    {
+        $collection =  Http::get('https://reqres.in/api/users?page=1');
+        return view('user', ['collection' => $collection['data']]);
+    }
+
     public function viewLoad()
     {
         $data = ['rizkika', 'zakka', 'palindungan'];
