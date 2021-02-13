@@ -2,6 +2,10 @@
 
 <h2>Username : {{ session('username') }}</h2>
 
+@if (session('flash_username'))
+    <h3 style="color: green">{{ session('flash_username') }} Sudah Ditambahkan</h3>
+@endif
+
 <form action="/user/loginAction" method="POST">
     {{ method_field('POST') }}
     @csrf

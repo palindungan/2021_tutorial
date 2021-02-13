@@ -31,11 +31,13 @@ class UserController extends Controller
 
     public function loginForm()
     {
-        if (session()->has('username')) {
-            return redirect('/profile');
-        } else {
-            return view('login');
-        }
+        // if (session()->has('username')) {
+        //     return redirect('/profile');
+        // } else {
+        //     return view('login');
+        // }
+
+        return view('login');
     }
 
     public function loginAction(Request $request)
@@ -46,10 +48,16 @@ class UserController extends Controller
         ]);
         $data = $request->input();
 
+        $username = $request->input('username');
+
         $request->session()->put('username', $data['username']);
         $request->session()->put('password', $data['password']);
 
-        return redirect('/profile');
+        $request->session()->flash('flash_username', $username);
+
+        return redirect('/user/login');
+
+        // return redirect('/profile');
     }
 
     public function getData()
