@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Symfony\Contracts\Service\Attribute\Required;
+use App\Models\User;
 
 class UserController extends Controller
 {
@@ -33,5 +34,10 @@ class UserController extends Controller
             'password' => 'required | min :4'
         ]);
         return $request->input();
+    }
+
+    public function getData()
+    {
+        return User::all();
     }
 }

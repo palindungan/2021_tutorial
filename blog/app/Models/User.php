@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model
 {
     use HasFactory;
+    // public $table = 'user'; // jika tidak bisa mengikuti format DB table plural
 }
