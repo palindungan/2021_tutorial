@@ -91,3 +91,5 @@ Route::get('/upload', function () {
 });
 
 Route::post('/upload/action', [UploadController::class, 'index']);
+
+Route::get('/user/showListData', [UserController::class, 'showListData']);

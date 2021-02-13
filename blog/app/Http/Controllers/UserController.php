@@ -63,4 +63,10 @@ class UserController extends Controller
     {
         return User::all();
     }
+
+    public function showListData()
+    {
+        $data = User::paginate(2);
+        return view('list', ['collection' => $data]);
+    }
 }
