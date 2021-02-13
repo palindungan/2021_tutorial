@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class UserController extends Controller
 {
@@ -27,6 +28,10 @@ class UserController extends Controller
 
     public function loginAction(Request $request)
     {
+        $request->validate([
+            'username' => 'required | max :10',
+            'password' => 'required | min :4'
+        ]);
         return $request->input();
     }
 }
