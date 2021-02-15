@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\MemberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,18 +58,10 @@ Route::get('/home', function () {
 })->middleware('protectedPage');
 
 Route::get('/user/login', [UserController::class, 'loginForm']);
-
 Route::post('/user/loginAction', [UserController::class, 'loginAction']);
-
 Route::get('/user/getData', [UserController::class, 'getData']);
-
 Route::get('/user/', [UserController::class, 'index']);
-
-Route::get('/profile/{lang}', function ($lang) {
-    App::setlocale($lang);
-    return view('profile');
-});
-
+Route::get('/user/showListData', [UserController::class, 'showListData']);
 Route::get('/logout', function () {
     if (session()->has('username')) {
         session()->pull('username');
@@ -76,20 +69,27 @@ Route::get('/logout', function () {
     return redirect('/user/login');
 });
 
+Route::get('/profile/{lang}', function ($lang) {
+    App::setlocale($lang);
+    return view('profile');
+});
+
+Route::get('/upload', function () {
+    return view('upload');
+});
+Route::post('/upload/action', [UploadController::class, 'index']);
+
+Route::get('/member/', function () {
+    return view('member/add');
+});
+Route::post('/member/addData', [MemberController::class, 'addData']);
+Route::get('/member/listData', [MemberController::class, 'listData']);
+
 // Route::group(['middleware' => 'protectedPage'], function () {
 //     Route::get('/home', function () {
 //         return view('home');
 //     });
 
 //     Route::get('/user/login', [UserController::class, 'loginForm']);
-
 //     Route::post('/user/loginAction', [UserController::class, 'loginAction']);
 // });
-
-Route::get('/upload', function () {
-    return view('upload');
-});
-
-Route::post('/upload/action', [UploadController::class, 'index']);
-
-Route::get('/user/showListData', [UserController::class, 'showListData']);
