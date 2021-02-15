@@ -19,6 +19,17 @@ class MemberController extends Controller
 
     public function listData()
     {
-        return view('member/list');
+        $members = Member::all();
+        return view('member/list', ['members' => $members]);
+    }
+
+    public function deleteData(Request $request)
+    {
+        $data = $request->input();
+        $id = $data['id'];
+
+        $member = Member::find($id);
+        $member->delete();
+        return redirect('member/listData');
     }
 }

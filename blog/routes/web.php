@@ -84,6 +84,7 @@ Route::get('/member/', function () {
 });
 Route::post('/member/addData', [MemberController::class, 'addData']);
 Route::get('/member/listData', [MemberController::class, 'listData']);
+Route::get('/member/deleteData', [MemberController::class, 'deleteData']);
 
 // Route::group(['middleware' => 'protectedPage'], function () {
 //     Route::get('/home', function () {
