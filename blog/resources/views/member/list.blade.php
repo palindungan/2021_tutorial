@@ -17,6 +17,7 @@
             <td>{{ $member['address'] }}</td>
             <td>
                 <a href={{ "deleteData?id=". $member['id'] }}>DELETE</a>
+                <a href={{ "showEditData?id=". $member['id'] }}>EDIT</a>
             </td>
         </tr>
     @endforeach

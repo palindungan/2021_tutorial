@@ -17,12 +17,6 @@ class MemberController extends Controller
         return redirect('member');
     }
 
-    public function listData()
-    {
-        $members = Member::all();
-        return view('member/list', ['members' => $members]);
-    }
-
     public function deleteData(Request $request)
     {
         $data = $request->input();
@@ -30,6 +24,31 @@ class MemberController extends Controller
 
         $member = Member::find($id);
         $member->delete();
-        return redirect('member/listData');
+        return redirect('member/showListData');
+    }
+
+    public function updateData(Request $request)
+    {
+        $member = Member::find($request->id);
+        $member->name       = $request->name;
+        $member->email      = $request->email;
+        $member->address    = $request->address;
+        $member->save();
+        return redirect('member/showListData');
+    }
+
+    public function showListData()
+    {
+        $members = Member::all();
+        return view('member/list', ['members' => $members]);
+    }
+
+    public function showEditData(Request $request)
+    {
+        $data = $request->input();
+        $id = $data['id'];
+        $member = Member::find($id);
+
+        return view('member/edit', ['member' => $member]);
     }
 }

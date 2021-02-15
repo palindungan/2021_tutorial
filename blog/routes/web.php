@@ -83,8 +83,10 @@ Route::get('/member/', function () {
     return view('member/add');
 });
 Route::post('/member/addData', [MemberController::class, 'addData']);
-Route::get('/member/listData', [MemberController::class, 'listData']);
 Route::get('/member/deleteData', [MemberController::class, 'deleteData']);
+Route::post('/member/updateData', [MemberController::class, 'updateData']);
+Route::get('/member/showListData', [MemberController::class, 'showListData']);
+Route::get('/member/showEditData', [MemberController::class, 'showEditData']);
 
 // Route::group(['middleware' => 'protectedPage'], function () {
 //     Route::get('/home', function () {
