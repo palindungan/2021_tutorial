@@ -50,6 +50,7 @@ class MemberController extends Controller
     // query builder tutorial -> 
     public function qbGetAllData()
     {
-        return DB::table('members')->get();
+        $members = DB::table('members')->get();
+        return view('member_qb/list', ['members' => $members]);
     }
 }
