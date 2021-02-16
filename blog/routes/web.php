@@ -89,6 +89,10 @@ Route::get('/member/showListData', [MemberController::class, 'showListData']);
 Route::get('/member/showEditData', [MemberController::class, 'showEditData']);
 
 Route::get('/member/qbGetAllData', [MemberController::class, 'qbGetAllData']);
+Route::get('/member/qbGetData', [MemberController::class, 'qbGetData']);
+Route::get('/member/qbGetData2', [MemberController::class, 'qbGetData2']);
+Route::get('/member/qbCountData', [MemberController::class, 'qbCountData']);
+Route::get('/member/dbOperations', [MemberController::class, 'dbOperations']);
 
 // Route::group(['middleware' => 'protectedPage'], function () {
 //     Route::get('/home', function () {

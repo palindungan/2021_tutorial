@@ -53,4 +53,50 @@ class MemberController extends Controller
         $members = DB::table('members')->get();
         return view('member_qb/list', ['members' => $members]);
     }
+
+    // query builder tutorial -> 
+    public function qbGetData()
+    {
+        return DB::table('members')
+            ->where('id', 1)
+            ->get();
+    }
+
+    public function qbGetData2()
+    {
+        return (array) DB::table('members')->find(2);
+    }
+
+    public function qbCountData()
+    {
+        return (array) DB::table('members')->count();
+    }
+
+    public function dbOperations()
+    {
+        // INSERT DB
+        // return DB::table('members')->insert(
+        //     [
+        //         'name'      => 'anil',
+        //         'email'     => 'anil@test.com',
+        //         'address'   => 'majang'
+        //     ]
+        // );
+
+        // UPDATE DB
+        // return DB::table('members')
+        //     ->where('id', 4)
+        //     ->update(
+        //         [
+        //             'name'      => 'kika',
+        //             'email'     => 'kika@test.com',
+        //             'address'   => 'kunir'
+        //         ]
+        //     );
+
+        // DELETE DB
+        return DB::table('members')
+            ->where('id', 4)
+            ->delete();
+    }
 }
