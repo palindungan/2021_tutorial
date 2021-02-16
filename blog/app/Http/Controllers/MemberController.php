@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Member;
+use Illuminate\Support\Facades\DB;
 
 class MemberController extends Controller
 {
@@ -19,10 +20,7 @@ class MemberController extends Controller
 
     public function deleteData(Request $request)
     {
-        $data = $request->input();
-        $id = $data['id'];
-
-        $member = Member::find($id);
+        $member = Member::find($request->id);
         $member->delete();
         return redirect('member/showListData');
     }
@@ -45,10 +43,13 @@ class MemberController extends Controller
 
     public function showEditData(Request $request)
     {
-        $data = $request->input();
-        $id = $data['id'];
-        $member = Member::find($id);
-
+        $member = Member::find($request->id);
         return view('member/edit', ['member' => $member]);
+    }
+
+    // query builder tutorial -> 
+    public function qbGetAllData()
+    {
+        return DB::table('members')->get();
     }
 }

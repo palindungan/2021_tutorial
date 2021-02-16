@@ -88,6 +88,8 @@ Route::post('/member/updateData', [MemberController::class, 'updateData']);
 Route::get('/member/showListData', [MemberController::class, 'showListData']);
 Route::get('/member/showEditData', [MemberController::class, 'showEditData']);
 
+Route::get('/member/qbGetAllData', [MemberController::class, 'qbGetAllData']);
+
 // Route::group(['middleware' => 'protectedPage'], function () {
 //     Route::get('/home', function () {
 //         return view('home');
