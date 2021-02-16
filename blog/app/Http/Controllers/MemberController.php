@@ -99,4 +99,21 @@ class MemberController extends Controller
             ->where('id', 4)
             ->delete();
     }
+
+    public function operations()
+    {
+        echo DB::table('members')->avg('id');
+        echo "<br>";
+        echo DB::table('members')->sum('id');
+        echo "<br>";
+        echo DB::table('members')->count('id');
+        echo "<br>";
+        echo DB::table('members')->max('id');
+        echo "<br>";
+        echo DB::table('members')->min('id');
+        echo "<br>";
+
+        echo DB::table('members')->min('name');
+        echo "<br>";
+    }
 }

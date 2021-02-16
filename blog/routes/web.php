@@ -94,6 +94,8 @@ Route::get('/member/qbGetData2', [MemberController::class, 'qbGetData2']);
 Route::get('/member/qbCountData', [MemberController::class, 'qbCountData']);
 Route::get('/member/dbOperations', [MemberController::class, 'dbOperations']);
 
+Route::get('/member/operations', [MemberController::class, 'operations']);
+
 // Route::group(['middleware' => 'protectedPage'], function () {
 //     Route::get('/home', function () {
 //         return view('home');
