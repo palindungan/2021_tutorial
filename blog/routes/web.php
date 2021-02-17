@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\EmployeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -95,6 +96,8 @@ Route::get('/member/qbCountData', [MemberController::class, 'qbCountData']);
 Route::get('/member/dbOperations', [MemberController::class, 'dbOperations']);
 
 Route::get('/member/operations', [MemberController::class, 'operations']);
+
+Route::get('/employee/showJoins', [EmployeeController::class, 'showJoins']);
 
 // Route::group(['middleware' => 'protectedPage'], function () {
 //     Route::get('/home', function () {
