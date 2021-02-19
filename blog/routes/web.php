@@ -99,6 +99,8 @@ Route::get('/member/operations', [MemberController::class, 'operations']);
 Route::get('/member/accessors', [MemberController::class, 'accessors']);
 Route::get('/member/addDataMutator', [MemberController::class, 'addDataMutator']);
 
+Route::get('/member/one_to_many', [MemberController::class, 'one_to_many']);
+
 Route::get('/employee/showJoins', [EmployeeController::class, 'showJoins']);
 Route::get('/employee/one_to_one', [EmployeeController::class, 'one_to_one']);
 

@@ -129,4 +129,9 @@ class MemberController extends Controller
         $member->address    = 'jember';
         return $member->save();
     }
+
+    public function one_to_many()
+    {
+        return $member = Member::find(2)->getDevice;
+    }
 }

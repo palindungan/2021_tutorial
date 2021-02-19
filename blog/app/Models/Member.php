@@ -30,4 +30,9 @@ class Member extends Model
     {
         $this->attributes["address"] = $value . ". Indonesia";
     }
+
+    public function getDevice()
+    {
+        return $this->hasMany("App\Models\Device");
+    }
 }
