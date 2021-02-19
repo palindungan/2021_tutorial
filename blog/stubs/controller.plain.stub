@@ -8,4 +8,8 @@ use Illuminate\Http\Request;
 class {{ class }} extends Controller
 {
     //
+    public function index()
+    {
+        return "Hello From Index";
+    }
 }
