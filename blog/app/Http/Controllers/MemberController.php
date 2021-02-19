@@ -115,4 +115,9 @@ class MemberController extends Controller
         echo DB::table('members')->min('name');
         echo "<br>";
     }
+
+    public function Accessors()
+    {
+        return   $members = Member::all();
+    }
 }

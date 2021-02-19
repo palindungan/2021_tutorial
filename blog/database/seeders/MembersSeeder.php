@@ -16,10 +16,12 @@ class MembersSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('members')->insert([
-            'name' => Str::random(10),
-            'email' => Str::random(10) . "@gmail.com",
-            'address' => Str::random(10),
-        ]);
+        for ($i = 0; $i < 10; $i++) {
+            DB::table('members')->insert([
+                'name' => Str::random(10),
+                'email' => Str::random(10) . "@gmail.com",
+                'address' => Str::random(10),
+            ]);
+        }
     }
 }
