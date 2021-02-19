@@ -96,7 +96,8 @@ Route::get('/member/qbCountData', [MemberController::class, 'qbCountData']);
 Route::get('/member/dbOperations', [MemberController::class, 'dbOperations']);
 
 Route::get('/member/operations', [MemberController::class, 'operations']);
-Route::get('/member/accessors', [MemberController::class, 'Accessors']);
+Route::get('/member/accessors', [MemberController::class, 'accessors']);
+Route::get('/member/addDataMutator', [MemberController::class, 'addDataMutator']);
 
 Route::get('/employee/showJoins', [EmployeeController::class, 'showJoins']);
 

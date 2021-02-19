@@ -116,8 +116,17 @@ class MemberController extends Controller
         echo "<br>";
     }
 
-    public function Accessors()
+    public function accessors()
     {
-        return   $members = Member::all();
+        return $members = Member::all();
+    }
+
+    public function addDataMutator(Request $request)
+    {
+        $member = new Member;
+        $member->name       = 'rizkika';
+        $member->email      = 'kika@gmail.com';
+        $member->address    = 'jember';
+        return $member->save();
     }
 }
