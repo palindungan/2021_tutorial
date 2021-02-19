@@ -95,9 +95,9 @@ class MemberController extends Controller
         //     );
 
         // DELETE DB
-        return DB::table('members')
-            ->where('id', 4)
-            ->delete();
+        // return DB::table('members')
+        //     ->where('id', 4)
+        //     ->delete();
     }
 
     public function operations()
@@ -112,7 +112,6 @@ class MemberController extends Controller
         echo "<br>";
         echo DB::table('members')->min('id');
         echo "<br>";
-
         echo DB::table('members')->min('name');
         echo "<br>";
     }
