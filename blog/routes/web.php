@@ -100,6 +100,7 @@ Route::get('/member/accessors', [MemberController::class, 'accessors']);
 Route::get('/member/addDataMutator', [MemberController::class, 'addDataMutator']);
 
 Route::get('/employee/showJoins', [EmployeeController::class, 'showJoins']);
+Route::get('/employee/one_to_one', [EmployeeController::class, 'one_to_one']);
 
 // Route::group(['middleware' => 'protectedPage'], function () {
 //     Route::get('/home', function () {
