@@ -7,6 +7,7 @@ use App\Http\Controllers\MemberController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\DeviceController;
 use App\Mail\SampleMail;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -114,6 +115,8 @@ Route::get('/device/{key:name}', [DeviceController::class, 'index']); // untuk K
 Route::get('/sample_mail', function () {
     return new SampleMail();
 });
+
+Route::get('/product', [ProductController::class, 'index']);
 
 // Route::group(['middleware' => 'protectedPage'], function () {
 //     Route::get('/home', function () {
