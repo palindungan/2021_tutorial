@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\DeviceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -105,6 +106,9 @@ Route::get('/employee/showJoins', [EmployeeController::class, 'showJoins']);
 Route::get('/employee/one_to_one', [EmployeeController::class, 'one_to_one']);
 
 Route::get('/employee/fluentStrings', [EmployeeController::class, 'fluentStrings']);
+
+// Route::get('/device/{key}', [DeviceController::class, 'index']); // untuk ID
+Route::get('/device/{key:name}', [DeviceController::class, 'index']); // untuk Kolom tertentu
 
 // Route::group(['middleware' => 'protectedPage'], function () {
 //     Route::get('/home', function () {
