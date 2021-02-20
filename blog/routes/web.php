@@ -6,6 +6,7 @@ use App\Http\Controllers\UploadController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\DeviceController;
+use App\Mail\SampleMail;
 
 /*
 |--------------------------------------------------------------------------
@@ -109,6 +110,10 @@ Route::get('/employee/fluentStrings', [EmployeeController::class, 'fluentStrings
 
 // Route::get('/device/{key}', [DeviceController::class, 'index']); // untuk ID
 Route::get('/device/{key:name}', [DeviceController::class, 'index']); // untuk Kolom tertentu
+
+Route::get('/sample_mail', function () {
+    return new SampleMail();
+});
 
 // Route::group(['middleware' => 'protectedPage'], function () {
 //     Route::get('/home', function () {
