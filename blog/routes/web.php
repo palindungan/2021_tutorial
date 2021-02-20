@@ -104,6 +104,8 @@ Route::get('/member/one_to_many', [MemberController::class, 'one_to_many']);
 Route::get('/employee/showJoins', [EmployeeController::class, 'showJoins']);
 Route::get('/employee/one_to_one', [EmployeeController::class, 'one_to_one']);
 
+Route::get('/employee/fluentStrings', [EmployeeController::class, 'fluentStrings']);
+
 // Route::group(['middleware' => 'protectedPage'], function () {
 //     Route::get('/home', function () {
 //         return view('home');
