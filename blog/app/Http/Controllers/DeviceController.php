@@ -12,4 +12,9 @@ class DeviceController extends Controller
     {
         return $key;
     }
+
+    public function getData()
+    {
+        return Device::all();
+    }
 }
