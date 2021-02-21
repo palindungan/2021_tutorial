@@ -45,4 +45,16 @@ class DeviceController extends Controller
             return ["result" => "Operation Failed"];
         }
     }
+
+    public function deleteData(Request $request)
+    {
+        $device = Device::find($request->id);
+        $result = $device->delete();
+
+        if ($result) {
+            return ["result" => "Data Has Been Deleted"];
+        } else {
+            return ["result" => "Operation Failed"];
+        }
+    }
 }
