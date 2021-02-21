@@ -6,6 +6,7 @@ use App\Http\Controllers\DummyAPI;
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +38,5 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     //All secure URL's
     Route::apiResource("company", CompanyController::class);
 });
+
+Route::post("file/upload", [FileController::class, "upload"]);
