@@ -17,4 +17,18 @@ class DeviceController extends Controller
     {
         return Device::all();
     }
+
+    public function postData(Request $request)
+    {
+        $device = new Device;
+        $device->name       = $request->name;
+        $device->member_id  = $request->member_id;
+        $result = $device->save();
+
+        if ($result) {
+            return ["result" => "Data Has Been Saved"];
+        } else {
+            return ["result" => "Operation Failed"];
+        }
+    }
 }
