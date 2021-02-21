@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DummyAPI;
 use App\Http\Controllers\DeviceController;
+use App\Http\Controllers\CompanyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,5 @@ Route::put("device/put_data", [DeviceController::class, "putData"]);
 Route::delete("device/delete_data", [DeviceController::class, "deleteData"]);
 Route::get("device/search_data", [DeviceController::class, "searchData"]);
 Route::post("device/data_validation", [DeviceController::class, "dataValidation"]);
+
+Route::apiResource("company", CompanyController::class);
