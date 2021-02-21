@@ -64,7 +64,7 @@ Route::get('/home', function () {
 Route::get('/user/login', [UserController::class, 'loginForm']);
 Route::post('/user/loginAction', [UserController::class, 'loginAction']);
 Route::get('/user/getData', [UserController::class, 'getData']);
-Route::get('/user/', [UserController::class, 'index']);
+Route::get('/user/', [UserController::class, 'show']);
 Route::get('/user/showListData', [UserController::class, 'showListData']);
 Route::get('/logout', function () {
     if (session()->has('username')) {

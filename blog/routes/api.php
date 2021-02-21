@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DummyAPI;
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +31,9 @@ Route::delete("device/delete_data", [DeviceController::class, "deleteData"]);
 Route::get("device/search_data", [DeviceController::class, "searchData"]);
 Route::post("device/data_validation", [DeviceController::class, "dataValidation"]);
 
-Route::apiResource("company", CompanyController::class);
+Route::post("login", [UserController::class, 'index']);
+
+Route::group(['middleware' => 'auth:sanctum'], function () {
+    //All secure URL's
+    Route::apiResource("company", CompanyController::class);
+});
