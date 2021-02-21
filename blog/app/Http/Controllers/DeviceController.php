@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Device;
+use Validator;
 
 class DeviceController extends Controller
 {
@@ -62,5 +63,18 @@ class DeviceController extends Controller
     {
         // return Device::where("name", $request->name)->get();
         return Device::where("name", "like", "%" . $request->name . "%")->get();
+    }
+
+    public function dataValidation(Request $request)
+    {
+        $rules = array(
+            "member_id" => "required|min:1|max:4"
+        );
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 401);
+        } else {
+            return "valid !";
+        }
     }
 }
