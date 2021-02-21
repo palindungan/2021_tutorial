@@ -26,3 +26,4 @@ Route::get("device/get_data", [DeviceController::class, "getData"]);
 Route::post("device/post_data", [DeviceController::class, "postData"]);
 Route::put("device/put_data", [DeviceController::class, "putData"]);
 Route::delete("device/delete_data", [DeviceController::class, "deleteData"]);
+Route::get("device/search_data", [DeviceController::class, "searchData"]);
