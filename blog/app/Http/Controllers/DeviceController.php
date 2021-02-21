@@ -31,4 +31,18 @@ class DeviceController extends Controller
             return ["result" => "Operation Failed"];
         }
     }
+
+    public function putData(Request $request)
+    {
+        $device = Device::find($request->id);
+        $device->name       = $request->name;
+        $device->member_id  = $request->member_id;
+        $result = $device->save();
+
+        if ($result) {
+            return ["result" => "Data Has Been Updated"];
+        } else {
+            return ["result" => "Operation Failed"];
+        }
+    }
 }
