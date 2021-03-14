@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "446296884449",
+    "project_id": "flutter-uber-clone-8ea68",
+    "storage_bucket": "flutter-uber-clone-8ea68.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:446296884449:android:1d115fed6acd0cd598a3a0",
+        "android_client_info": {
+          "package_name": "com.kika.riderapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "446296884449-ji24icq0ffjr3fupfebahj8uhg375pps.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCa114J4kO8mxfYOH6-Q3GmzaUS4TI0lKQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "446296884449-ji24icq0ffjr3fupfebahj8uhg375pps.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
