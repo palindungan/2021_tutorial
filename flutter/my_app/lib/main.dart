@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart'; // package dasar yg dibutuhkan untuk mengeksekusi program
 
-// entry point (dieksekusi ketika program pertama kali berjalan)
-void main() {
-  runApp(MyApp());
-}
-
+// class postingan
 class Post {
   // class
   Post(this.body, this.author); // constructor
@@ -21,6 +17,11 @@ class Post {
       this.likes = this.likes - 1;
     }
   }
+}
+
+// entry point (dieksekusi ketika program pertama kali berjalan)
+void main() {
+  runApp(MyApp());
 }
 
 // widget yg tidak memiliki state, tidak berubah dengan interaksi program
@@ -48,17 +49,15 @@ class MyHomePage extends StatefulWidget {
 
 // class for handle state + rendering widget
 class _MyHomePageState extends State<MyHomePage> {
-  // Start of MyHomePage Logic Here
-  String text = "";
+  List<Post> posts = []; // empty array for store data object class Post
 
-  void changeText(String text) {
+  // fungsi untuk membuat postingan baru
+  void newPost(String text) {
+    // reload widget
     this.setState(() {
-      // reload widget
-      this.text = text;
+      posts.add(new Post(text, "author"));
     });
   }
-
-  // End of MyHomePage Logic Here
 
   @override
   Widget build(BuildContext context) {
@@ -67,8 +66,8 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("Hello World"),
       ),
       body: Column(children: <Widget>[
-        TextInputWidget(this.changeText),
-        Text(this.text)
+        Expanded(child: PostList(this.posts)),
+        Expanded(child: TextInputWidget(this.newPost))
       ]),
     );
   }
@@ -77,7 +76,8 @@ class _MyHomePageState extends State<MyHomePage> {
 // class for handle constructor and callback
 class TextInputWidget extends StatefulWidget {
   TextInputWidget(this.callback); // constructor
-  final Function(String) callback; // deklarasi parameter callback (string)
+  final Function(String)
+      callback; // deklarasi parameter callback (berupa fungsi berisi string)
 
   @override
   _TextInputWidgetState createState() => _TextInputWidgetState();
@@ -114,6 +114,26 @@ class _TextInputWidgetState extends State<TextInputWidget> {
             splashColor: Colors.orange,
             tooltip: "Here a message",
           )),
+    );
+  }
+}
+
+class PostList extends StatefulWidget {
+  PostList(this.listItems);
+  final List<Post> listItems;
+
+  @override
+  _PostListState createState() => _PostListState();
+}
+
+class _PostListState extends State<PostList> {
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: this.widget.listItems.length,
+      itemBuilder: (context, index) {
+        var post = this.widget.listItems[index];
+      },
     );
   }
 }
