@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart'; // package dasar yg dibutuhkan untuk mengeksekusi program
 
-// class postingan
+// model class postingan
 class Post {
   // class
   Post(this.body, this.author); // constructor
@@ -120,6 +120,7 @@ class _TextInputWidgetState extends State<TextInputWidget> {
 
 class PostList extends StatefulWidget {
   PostList(this.listItems);
+
   final List<Post> listItems;
 
   @override
@@ -133,6 +134,17 @@ class _PostListState extends State<PostList> {
       itemCount: this.widget.listItems.length,
       itemBuilder: (context, index) {
         var post = this.widget.listItems[index];
+        return Card(
+            child: Row(children: <Widget>[
+          Expanded(
+              child: ListTile(
+                  title: Text(post.body), subtitle: Text(post.author))),
+          Row(
+            children: <Widget>[
+              IconButton(icon: Icon(Icons.thumb_up), onPressed: post.likePost)
+            ],
+          )
+        ]));
       },
     );
   }
