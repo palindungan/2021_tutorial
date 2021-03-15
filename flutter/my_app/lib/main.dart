@@ -5,6 +5,24 @@ void main() {
   runApp(MyApp());
 }
 
+class Post {
+  // class
+  Post(this.body, this.author); // constructor
+  String body, author;
+
+  bool userLiked = false;
+  int likes = 0;
+
+  void likePost() {
+    this.userLiked = true;
+    if (this.userLiked) {
+      this.likes = this.likes + 1;
+    } else {
+      this.likes = this.likes - 1;
+    }
+  }
+}
+
 // widget yg tidak memiliki state, tidak berubah dengan interaksi program
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -22,19 +40,25 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// class for handle constructor and callback
 class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
+// class for handle state + rendering widget
 class _MyHomePageState extends State<MyHomePage> {
+  // Start of MyHomePage Logic Here
   String text = "";
 
   void changeText(String text) {
     this.setState(() {
+      // reload widget
       this.text = text;
     });
   }
+
+  // End of MyHomePage Logic Here
 
   @override
   Widget build(BuildContext context) {
@@ -50,20 +74,21 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-// class for handle constructor
+// class for handle constructor and callback
 class TextInputWidget extends StatefulWidget {
-  final Function(String) callback;
-
   TextInputWidget(this.callback); // constructor
+  final Function(String) callback; // deklarasi parameter callback (string)
 
   @override
   _TextInputWidgetState createState() => _TextInputWidgetState();
 }
 
-// class for handle state + rendering
+// class for handle state + rendering widget
 class _TextInputWidgetState extends State<TextInputWidget> {
-  final controller = TextEditingController();
+  final controller = TextEditingController(); // controller for this widget
 
+  // dispose method use to release the memory allocated to variables when state object is removed.
+  // method called automatically from stateful if not defined.
   @override
   void dispose() {
     super.dispose();
@@ -71,8 +96,9 @@ class _TextInputWidgetState extends State<TextInputWidget> {
   }
 
   void onPressSend() {
-    widget.callback(controller.text);
-    controller.clear();
+    widget.callback(controller
+        .text); // memanggil constraktor TextInputWidget dengan parameter text
+    controller.clear(); // menghapus TextInputWidget value
   }
 
   @override
