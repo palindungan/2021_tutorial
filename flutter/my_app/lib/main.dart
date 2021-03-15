@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
 class TextInputWidget extends StatefulWidget {
   final Function(String) callback;
 
-  TextInputWidget(this.callback);
+  TextInputWidget(this.callback); // constructor
 
   @override
   _TextInputWidgetState createState() => _TextInputWidgetState();
