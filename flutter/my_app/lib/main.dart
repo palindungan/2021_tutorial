@@ -10,7 +10,7 @@ class Post {
   int likes = 0;
 
   void likePost() {
-    this.userLiked = true;
+    this.userLiked = !this.userLiked;
     if (this.userLiked) {
       this.likes = this.likes + 1;
     } else {
@@ -41,6 +41,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // class for handle constructor and callback
 class MyHomePage extends StatefulWidget {
   @override
@@ -67,17 +68,18 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Column(children: <Widget>[
         Expanded(child: PostList(this.posts)),
-        Expanded(child: TextInputWidget(this.newPost))
+        TextInputWidget(this.newPost)
       ]),
     );
   }
 }
 
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // class for handle constructor and callback
 class TextInputWidget extends StatefulWidget {
   TextInputWidget(this.callback); // constructor
   final Function(String)
-      callback; // deklarasi parameter callback (berupa fungsi berisi string)
+  callback; // deklarasi parameter callback (berupa fungsi berisi string)
 
   @override
   _TextInputWidgetState createState() => _TextInputWidgetState();
@@ -96,6 +98,7 @@ class _TextInputWidgetState extends State<TextInputWidget> {
   }
 
   void onPressSend() {
+    FocusScope.of(context).unfocus();
     widget.callback(controller
         .text); // memanggil constraktor TextInputWidget dengan parameter text
     controller.clear(); // menghapus TextInputWidget value
@@ -118,6 +121,7 @@ class _TextInputWidgetState extends State<TextInputWidget> {
   }
 }
 
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 class PostList extends StatefulWidget {
   PostList(this.listItems);
 
@@ -128,6 +132,12 @@ class PostList extends StatefulWidget {
 }
 
 class _PostListState extends State<PostList> {
+  void like(Function callback) {
+    this.setState(() {
+      callback();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -136,15 +146,25 @@ class _PostListState extends State<PostList> {
         var post = this.widget.listItems[index];
         return Card(
             child: Row(children: <Widget>[
-          Expanded(
-              child: ListTile(
-                  title: Text(post.body), subtitle: Text(post.author))),
-          Row(
-            children: <Widget>[
-              IconButton(icon: Icon(Icons.thumb_up), onPressed: post.likePost)
-            ],
-          )
-        ]));
+              Expanded(
+                  child: ListTile(
+                      title: Text(post.body), subtitle: Text(post.author))),
+              Row(
+                children: <Widget>[
+                  Container(
+                    child: Text(
+                      post.likes.toString(),
+                      style: TextStyle(fontSize: 20),
+                    ),
+                    padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.thumb_up),
+                    onPressed: () => this.like(post.likePost),
+                    color: post.userLiked ? Colors.green : Colors.black)
+                ],
+              )
+            ]));
       },
     );
   }
