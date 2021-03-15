@@ -22,20 +22,40 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  String text = "";
+
+  void changeText(String text) {
+    this.setState(() {
+      this.text = text;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Hello World"),
       ),
-      body: TextInputWidget(),
+      body: Column(children: <Widget>[
+        TextInputWidget(this.changeText),
+        Text(this.text)
+      ]),
     );
   }
 }
 
 // class for handle constructor
 class TextInputWidget extends StatefulWidget {
+  final Function(String) callback;
+
+  TextInputWidget(this.callback);
+
   @override
   _TextInputWidgetState createState() => _TextInputWidgetState();
 }
@@ -43,37 +63,31 @@ class TextInputWidget extends StatefulWidget {
 // class for handle state + rendering
 class _TextInputWidgetState extends State<TextInputWidget> {
   final controller = TextEditingController();
-  String text = "";
 
   @override
-  void dispose(){
+  void dispose() {
     super.dispose();
     controller.dispose();
   }
 
-  void changeText(text){
-    if(text == "Hello World"){
-      controller.clear();
-      text = "";
-    }
-
-    setState(() {
-      this.text = text;
-    });
+  void onPressSend() {
+    widget.callback(controller.text);
+    controller.clear();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        TextField(
-          controller: this.controller,
-          decoration: InputDecoration(
-              prefixIcon: Icon(Icons.message), labelText: "Type a Message"),
-        onChanged: (text) => this.changeText(text),
-        ),
-        Text(this.text)
-      ],
+    return TextField(
+      controller: this.controller,
+      decoration: InputDecoration(
+          prefixIcon: Icon(Icons.message),
+          labelText: "Type a Message",
+          suffixIcon: IconButton(
+            icon: Icon(Icons.send),
+            onPressed: this.onPressSend,
+            splashColor: Colors.orange,
+            tooltip: "Here a message",
+          )),
     );
   }
 }
