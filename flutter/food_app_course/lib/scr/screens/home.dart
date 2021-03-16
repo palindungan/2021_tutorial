@@ -75,7 +75,11 @@ class _HomeState extends State<Home> {
             SizedBox(
               height: 5,
             ),
-            Categories()
+            Categories(),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CustomText(text: "Featured", size: 20, color: grey,),
+            )
           ],
         ),
       ),
