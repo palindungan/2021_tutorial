@@ -36,12 +36,40 @@ class _HomeState extends State<Home> {
                         height: 10,
                         width: 10,
                         decoration: BoxDecoration(
-                            color: red, borderRadius: BorderRadius.circular(20)),
+                            color: red,
+                            borderRadius: BorderRadius.circular(20)),
                       ),
                     )
                   ],
                 )
               ],
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                decoration: BoxDecoration(color: white, boxShadow: [
+                  BoxShadow(
+                      color: grey[300], offset: Offset(1, 1), blurRadius: 4)
+                ]),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.search,
+                    color: red,
+                  ),
+                  title: TextField(
+                    decoration: InputDecoration(
+                        hintText: "Find Food and Restaurant",
+                        border: InputBorder.none),
+                  ),
+                  trailing: Icon(
+                    Icons.filter_list,
+                    color: red,
+                  ),
+                ),
+              ),
             )
           ],
         ),
