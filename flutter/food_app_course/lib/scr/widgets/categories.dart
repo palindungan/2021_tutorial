@@ -7,8 +7,14 @@ import 'custom_text.dart';
 
 class Categories extends StatelessWidget {
   List<Category> categoriesList = [
-    Category(name: "Salad", image: "1.png"),
-    Category(name: "sasa", image: "logo.png")
+    Category(name: "1", image: "1.png"),
+    Category(name: "2", image: "2.png"),
+    Category(name: "3", image: "3.png"),
+    Category(name: "4", image: "4.png"),
+    Category(name: "5", image: "5.png"),
+    Category(name: "6", image: "6.png"),
+    Category(name: "7", image: "7.png"),
+    Category(name: "8", image: "8.png"),
   ];
 
   @override
@@ -40,7 +46,7 @@ class Categories extends StatelessWidget {
                   height: 10,
                 ),
                 CustomText(
-                  text: categoriesList.length.toString(),
+                  text: categoriesList[index].name,
                   size: 14,
                   color: black,
                 )
