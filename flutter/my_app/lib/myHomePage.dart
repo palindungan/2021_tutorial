@@ -17,7 +17,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void newPost(String text) {
     // reload widget
     this.setState(() {
-      posts.add(new Post(text, "author"));
+      posts.add(new Post(text, "author")); // adding new class Post model
     });
   }
 

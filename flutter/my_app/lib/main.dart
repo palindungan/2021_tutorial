@@ -3,7 +3,7 @@ import 'myHomePage.dart';
 
 // entry point (dieksekusi ketika program pertama kali berjalan)
 void main() {
-  runApp(MyApp());
+  runApp(MyApp()); // running MyApp class
 }
 
 // widget yg tidak memiliki state, tidak berubah dengan interaksi program
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   // membangun widget (widget Tree)
   @override
   Widget build(BuildContext context) {
-    // setup aplikasi
+    // setup material aplikasi
     return MaterialApp(
       title: 'Tims App',
       theme: ThemeData(

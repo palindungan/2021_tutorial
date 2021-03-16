@@ -2,11 +2,13 @@
 class Post {
   // class
   Post(this.body, this.author); // constructor
-  String body, author;
+  String body, author; // constructor parameter
 
+  // init
   bool userLiked = false;
   int likes = 0;
 
+  // method for like the post
   void likePost() {
     this.userLiked = !this.userLiked;
     if (this.userLiked) {

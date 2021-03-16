@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart'; // package dasar yg dibutuhkan untuk mengeksekusi program
 import 'post.dart';
 
+// class for handle constructor and callback
 class PostList extends StatefulWidget {
-  PostList(this.listItems);
+  PostList(this.listItems); // constructor
 
-  final List<Post> listItems;
+  final List<Post> listItems; // variable callback
 
   @override
   _PostListState createState() => _PostListState();
 }
 
 class _PostListState extends State<PostList> {
+
+  // method fungsi when liked post
   void like(Function callback) {
     this.setState(() {
       callback();
