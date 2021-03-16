@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_app_course/scr/common.dart';
+import 'package:food_app_course/scr/widgets/custom_text.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -19,12 +20,11 @@ class _HomeState extends State<Home> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    "What would you like to eat?",
-                    style: TextStyle(fontSize: 18),
-                  ),
-                ),
+                    padding: const EdgeInsets.all(8.0),
+                    child: CustomText(
+                      text: "What would you like to eat?",
+                      size: 18,
+                    )),
                 Stack(
                   children: [
                     IconButton(
