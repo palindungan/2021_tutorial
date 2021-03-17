@@ -87,6 +87,46 @@ class _HomeState extends State<Home> {
               ),
             ),
             Featured(),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CustomText(
+                text: "Popular",
+                size: 20,
+                color: grey,
+              ),
+            ),
+            Stack(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image.asset(BaseUrl().imageAssetsUrl + "7.png")),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Icon(
+                          Icons.favorite,
+                          color: red,
+                        ),
+                      ),
+                      Container(
+                        width: 50,
+                        decoration: BoxDecoration(
+                          color: white,
+                          borderRadius: BorderRadius.circular(5)
+                        ),
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
           ],
         ),
       ),
