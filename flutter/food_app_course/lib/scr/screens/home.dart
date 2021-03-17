@@ -86,9 +86,47 @@ class _HomeState extends State<Home> {
                 color: grey,
               ),
             ),
-
             Featured(),
-
+          ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        color: white,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset(
+                BaseUrl().imageAssetsUrl + "home.png",
+                width: 26,
+                height: 26,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset(
+                BaseUrl().imageAssetsUrl + "user.png",
+                width: 26,
+                height: 26,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset(
+                BaseUrl().imageAssetsUrl + "shopping-bag.png",
+                width: 26,
+                height: 26,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset(
+                BaseUrl().imageAssetsUrl + "table.png",
+                width: 26,
+                height: 26,
+              ),
+            ),
           ],
         ),
       ),
