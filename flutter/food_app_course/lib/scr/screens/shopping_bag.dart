@@ -32,7 +32,9 @@ class _ShoppingBagState extends State<ShoppingBag> {
               Icons.arrow_back,
               color: black,
             ),
-            onPressed: () {}),
+            onPressed: () {
+              Navigator.pop(context);
+            }),
         backgroundColor: white,
         elevation: 0,
         centerTitle: true,
