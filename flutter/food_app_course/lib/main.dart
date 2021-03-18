@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_app_course/scr/common.dart';
+import 'file:///C:/xampp/htdocs/2021_tutorial/flutter/food_app_course/lib/scr/helpers/common.dart';
 import 'package:food_app_course/scr/screens/home.dart';
 
 void main() {

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:food_app_course/scr/common.dart';
+import 'package:food_app_course/scr/helpers/common.dart';
 import 'package:food_app_course/scr/helpers/base_url.dart';
 import 'package:food_app_course/scr/widgets/bottom_navigation_icons.dart';
 import 'package:food_app_course/scr/widgets/categories.dart';

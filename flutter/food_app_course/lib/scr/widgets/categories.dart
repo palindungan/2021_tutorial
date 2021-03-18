@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_app_course/scr/helpers/base_url.dart';
 import 'package:food_app_course/scr/models/category.dart';
 
-import '../common.dart';
+import '../helpers/common.dart';
 import 'custom_text.dart';
 
 class Categories extends StatelessWidget {
