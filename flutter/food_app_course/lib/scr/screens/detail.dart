@@ -125,6 +125,17 @@ class _DetailState extends State<Detail> {
                   )
                 ],
               ),
+            ),
+            CustomText(
+              text: widget.product.name,
+              size: 26,
+              weight: FontWeight.bold,
+            ),
+            CustomText(
+              text: "\$"+widget.product.price.toString(),
+              size: 20,
+              color: red,
+              weight: FontWeight.w600,
             )
           ],
         ),
