@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_app_course/scr/helpers/base_url.dart';
 import 'package:food_app_course/scr/helpers/style.dart';
+import 'package:food_app_course/scr/models/product.dart';
 import 'package:food_app_course/scr/widgets/custom_text.dart';
 
 class ShoppingBag extends StatefulWidget {
@@ -9,6 +10,16 @@ class ShoppingBag extends StatefulWidget {
 }
 
 class _ShoppingBagState extends State<ShoppingBag> {
+  Product product = Product(
+      name: "Cereals 1",
+      image: "3.png",
+      price: 15.99,
+      rating: 3.2,
+      vendor: "Good Food 1",
+      whishList: true,
+      detail:
+          "1 daskdas das das das dasdqowud ebe 12eb12uebdqsbdqwdquwhduqiwdqwbd qw qwehhqwu qwhe");
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,6 +80,22 @@ class _ShoppingBagState extends State<ShoppingBag> {
         ],
       ),
       backgroundColor: white,
+      body: ListView(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Container(
+              height: 120,
+              decoration: BoxDecoration(color: white, boxShadow: [
+                BoxShadow(color: red[50], offset: Offset(3, 5), blurRadius: 30)
+              ]),
+              child: Row(
+                children: <Widget>[CustomText(text: "Blasdasdsad ")],
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

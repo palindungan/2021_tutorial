@@ -10,26 +10,31 @@ import 'custom_text.dart';
 class Featured extends StatelessWidget {
   List<Product> productsList = [
     Product(
-        name: "Cereals",
+        name: "Cereals 1",
         image: "3.png",
         price: 15.99,
-        rating: 4.2,
-        vendor: "Good Food",
-        whishList: true),
+        rating: 3.2,
+        vendor: "Good Food 1",
+        whishList: true,
+        detail:
+            "1 daskdas das das das dasdqowud ebe 12eb12uebdqsbdqwdquwhduqiwdqwbd qw qwehhqwu qwhe"),
     Product(
         name: "Cereals 2",
-        image: "2.png",
-        price: 20.00,
-        rating: 4.0,
-        vendor: "Good Food",
-        whishList: false),
+        image: "4.png",
+        price: 17.00,
+        rating: 4.7,
+        vendor: "Good Food 2",
+        whishList: false,
+        detail:
+            "2 asdjas ashdashdjash qwhd shd ashd asdhkahsdhas ashd ashdasdhas a sdhasjdhashdj"),
     Product(
         name: "Cereals 3",
         image: "5.png",
-        price: 10.00,
-        rating: 3.8,
-        vendor: "Good Food",
-        whishList: false),
+        price: 7.99,
+        rating: 4.2,
+        vendor: "Good Food 3",
+        whishList: false,
+        detail: "3 jbkajsbdkjashd ashd qshd eh 1231 23h123 1h312 3h123 213j"),
   ];
 
   @override
