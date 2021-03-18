@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:food_app_course/scr/helpers/base_url.dart';
 import 'package:food_app_course/scr/helpers/style.dart';
@@ -90,7 +92,34 @@ class _ShoppingBagState extends State<ShoppingBag> {
                 BoxShadow(color: red[50], offset: Offset(3, 5), blurRadius: 30)
               ]),
               child: Row(
-                children: <Widget>[CustomText(text: "Blasdasdsad ")],
+                children: <Widget>[
+                  Image.asset(
+                    BaseUrl().imageAssetsUrl + product.image,
+                    height: 120,
+                    width: 120,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      RichText(
+                          text: TextSpan(children: [
+                        TextSpan(
+                            text: product.name + "\n",
+                            style: TextStyle(color: black, fontSize: 20)),
+                        TextSpan(
+                            text: "\$" + product.price.toString() + "\n",
+                            style: TextStyle(
+                                color: black,
+                                fontSize: 17,
+                                fontWeight: FontWeight.bold))
+                      ])),
+                      SizedBox(
+                        width: 70,
+                      ),
+                      IconButton(icon: Icon(Icons.delete), onPressed: null)
+                    ],
+                  ),
+                ],
               ),
             ),
           ),
