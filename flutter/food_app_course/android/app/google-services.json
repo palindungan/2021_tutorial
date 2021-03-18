@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "213869451749",
+    "project_id": "foodapp-b71bc",
+    "storage_bucket": "foodapp-b71bc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:213869451749:android:7163a04ce82a34d51eb70c",
+        "android_client_info": {
+          "package_name": "com.kika.food_app_course"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "213869451749-q6hdeervb2eaivu9bf5pahbg2kctrio7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqWFlKAGdh_HyDyPmaBSOvxI2e0hA3CCI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "213869451749-q6hdeervb2eaivu9bf5pahbg2kctrio7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
