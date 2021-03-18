@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_app_course/scr/common.dart';
 import 'package:food_app_course/scr/helpers/base_url.dart';
+import 'package:food_app_course/scr/widgets/bottom_navigation_icons.dart';
 import 'package:food_app_course/scr/widgets/categories.dart';
 import 'package:food_app_course/scr/widgets/custom_text.dart';
 import 'package:food_app_course/scr/widgets/featured_products.dart';
@@ -221,62 +222,10 @@ class _HomeState extends State<Home> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                children: [
-                  Image.asset(
-                    BaseUrl().imageAssetsUrl + "home.png",
-                    width: 20,
-                    height: 20,
-                  ),
-                  SizedBox(height: 2,),
-                  CustomText(text: "Home")
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                children: [
-                  Image.asset(
-                    BaseUrl().imageAssetsUrl + "nearby.png",
-                    width: 20,
-                    height: 20,
-                  ),
-                  SizedBox(height: 2,),
-                  CustomText(text: "Near By")
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                children: [
-                  Image.asset(
-                    BaseUrl().imageAssetsUrl + "shopping-bag.png",
-                    width: 20,
-                    height: 20,
-                  ),
-                  SizedBox(height: 2,),
-                  CustomText(text: "Shop")
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                children: [
-                  Image.asset(
-                    BaseUrl().imageAssetsUrl + "user.png",
-                    width: 20,
-                    height: 20,
-                  ),
-                  SizedBox(height: 2,),
-                  CustomText(text: "Account")
-                ],
-              ),
-            ),
+            BottomNavIcon(image: "home.png", name: "Home",),
+            BottomNavIcon(image: "nearby.png", name: "Near By",),
+            BottomNavIcon(image: "shopping-bag.png", name: "Shop",),
+            BottomNavIcon(image: "user.png", name: "Account",),
           ],
         ),
       ),
