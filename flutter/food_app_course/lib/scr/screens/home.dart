@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:food_app_course/scr/helpers/screen_navigation.dart';
 import 'package:food_app_course/scr/helpers/style.dart';
 import 'package:food_app_course/scr/helpers/base_url.dart';
+import 'package:food_app_course/scr/screens/shopping_bag.dart';
 import 'package:food_app_course/scr/widgets/bottom_navigation_icons.dart';
 import 'package:food_app_course/scr/widgets/categories.dart';
 import 'package:food_app_course/scr/widgets/custom_text.dart';
@@ -222,10 +224,25 @@ class _HomeState extends State<Home> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            BottomNavIcon(image: "home.png", name: "Home",),
-            BottomNavIcon(image: "nearby.png", name: "Near By",),
-            BottomNavIcon(image: "shopping-bag.png", name: "Shop",),
-            BottomNavIcon(image: "user.png", name: "Account",),
+            BottomNavIcon(
+              image: "home.png",
+              name: "Home",
+            ),
+            BottomNavIcon(
+              image: "nearby.png",
+              name: "Near By",
+            ),
+            BottomNavIcon(
+              image: "shopping-bag.png",
+              name: "Shop",
+              onTap: () {
+                changeScreen(context, ShoppingBag());
+              },
+            ),
+            BottomNavIcon(
+              image: "user.png",
+              name: "Account",
+            ),
           ],
         ),
       ),
