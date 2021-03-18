@@ -23,16 +23,45 @@ class _DetailState extends State<Detail> {
           children: <Widget>[
             Container(
               height: 300,
-              child: Carousel(
-                images: [
-                  AssetImage(BaseUrl().imageAssetsUrl + widget.product.image),
-                  AssetImage(BaseUrl().imageAssetsUrl + widget.product.image),
-                  AssetImage(BaseUrl().imageAssetsUrl + widget.product.image),
+              child: Stack(
+                children: <Widget>[
+                  Carousel(
+                    images: [
+                      AssetImage(
+                          BaseUrl().imageAssetsUrl + widget.product.image),
+                      AssetImage(
+                          BaseUrl().imageAssetsUrl + widget.product.image),
+                      AssetImage(
+                          BaseUrl().imageAssetsUrl + widget.product.image),
+                    ],
+                    dotBgColor: white,
+                    dotColor: grey,
+                    dotIncreasedColor: red,
+                    dotIncreaseSize: 1.2,
+                    autoplay: false,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      IconButton(
+                          icon: Icon(
+                            Icons.arrow_back,
+                            color: black,
+                          ),
+                          onPressed: () {
+                            Navigator.pop(context);
+                          }),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Image.asset(
+                          BaseUrl().imageAssetsUrl + "shopping-bag.png",
+                          width: 30,
+                          height: 30,
+                        ),
+                      )
+                    ],
+                  ),
                 ],
-                dotBgColor: white,
-                dotColor: grey,
-                dotIncreasedColor: red,
-                dotIncreaseSize: 1.2,
               ),
             )
           ],
