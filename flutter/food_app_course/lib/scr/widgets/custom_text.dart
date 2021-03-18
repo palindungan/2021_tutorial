@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_app_course/scr/helpers/common.dart';
+import 'package:food_app_course/scr/helpers/style.dart';
 
 class CustomText extends StatelessWidget {
   CustomText({@required this.text, this.size, this.color, this.weight});

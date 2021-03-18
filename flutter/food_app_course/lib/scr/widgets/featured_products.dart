@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:food_app_course/scr/helpers/base_url.dart';
+import 'package:food_app_course/scr/helpers/screen_navigation.dart';
 import 'package:food_app_course/scr/models/product.dart';
+import 'package:food_app_course/scr/screens/detail.dart';
 
-import '../helpers/common.dart';
+import '../helpers/style.dart';
 import 'custom_text.dart';
 
 class Featured extends StatelessWidget {
@@ -41,8 +43,8 @@ class Featured extends StatelessWidget {
             return Padding(
               padding: const EdgeInsets.all(8.0),
               child: GestureDetector(
-                onTap: (){
-                  // changeScreen()
+                onTap: () {
+                  changeScreen(_, Detail(product: productsList[index]));
                 },
                 child: Container(
                   height: 240,
