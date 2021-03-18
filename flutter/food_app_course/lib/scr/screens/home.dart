@@ -240,12 +240,12 @@ class _HomeState extends State<Home> {
               child: Column(
                 children: [
                   Image.asset(
-                    BaseUrl().imageAssetsUrl + "user.png",
+                    BaseUrl().imageAssetsUrl + "nearby.png",
                     width: 20,
                     height: 20,
                   ),
                   SizedBox(height: 2,),
-                  CustomText(text: "Home")
+                  CustomText(text: "Near By")
                 ],
               ),
             ),
@@ -259,7 +259,7 @@ class _HomeState extends State<Home> {
                     height: 20,
                   ),
                   SizedBox(height: 2,),
-                  CustomText(text: "Home")
+                  CustomText(text: "Shop")
                 ],
               ),
             ),
@@ -268,12 +268,12 @@ class _HomeState extends State<Home> {
               child: Column(
                 children: [
                   Image.asset(
-                    BaseUrl().imageAssetsUrl + "table.png",
+                    BaseUrl().imageAssetsUrl + "user.png",
                     width: 20,
                     height: 20,
                   ),
                   SizedBox(height: 2,),
-                  CustomText(text: "Home")
+                  CustomText(text: "Account")
                 ],
               ),
             ),
