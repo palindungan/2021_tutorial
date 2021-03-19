@@ -89,7 +89,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           return;
                         }
                         authProvider.cleanControllers();
-                        changeScreenReplacement(context, Home());
+                        changeScreenReplacement(context, HomeScreen());
                       },
                       child: Container(
                         decoration: BoxDecoration(

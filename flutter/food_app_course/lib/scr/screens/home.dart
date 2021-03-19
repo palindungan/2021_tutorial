@@ -10,12 +10,12 @@ import 'package:food_app_course/scr/widgets/custom_text.dart';
 import 'package:food_app_course/scr/widgets/featured_products.dart';
 import 'package:food_app_course/scr/widgets/small_button.dart';
 
-class Home extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -107,7 +107,7 @@ class _RegistrationState extends State<Registration> {
                           return;
                         }
                         authProvider.cleanControllers();
-                        changeScreenReplacement(context, Home());
+                        changeScreenReplacement(context, HomeScreen());
                       },
                       child: Container(
                         decoration: BoxDecoration(
