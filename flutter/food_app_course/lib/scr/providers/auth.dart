@@ -37,7 +37,7 @@ class AuthProvider with ChangeNotifier {
       _status = Status.Authenticating;
       notifyListeners();
       await _auth.signInWithEmailAndPassword(
-          email: email.text, password: password.text);
+          email: email.text.trim(), password: password.text.trim());
       return true;
     } catch (e) {
       return _onError(e.toString());
@@ -57,11 +57,11 @@ class AuthProvider with ChangeNotifier {
       notifyListeners();
       await _auth
           .createUserWithEmailAndPassword(
-              email: email.text, password: password.text)
+              email: email.text.trim(), password: password.text.trim())
           .then((user) {
         Map<String, dynamic> values = {
-          "name": name.text,
-          "email": email.text,
+          "name": name.text.trim(),
+          "email": email.text.trim(),
           "id": user.user.uid,
         };
         _userServices.createUser(values);
