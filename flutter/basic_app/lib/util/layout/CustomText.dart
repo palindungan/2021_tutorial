@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class CustomText {
   static const textLblColor = CustomColor.orange;
-  static const double textLblSize = 40;
+  static const double textLblSize = 30;
   static const double textlblHeight = 1.5;
   static const textLblWeight = FontWeight.w300;
   static const double textlblLetterSpacing = 2;
