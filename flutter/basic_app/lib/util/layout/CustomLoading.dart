@@ -1,8 +1,3 @@
-import 'package:flutter/material.dart';
+class CustomLoading {
 
-class CustomLoading extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
 }
