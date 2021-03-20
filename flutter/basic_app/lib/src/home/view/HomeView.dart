@@ -1,3 +1,4 @@
+import 'package:basic_app/util/layout/CustomColor.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
@@ -11,10 +12,18 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   int _counter = 0;
+  Color _color = CustomColor.grey;
+  bool isPressed = false;
 
   void _incrementCounter() {
     setState(() {
       _counter++;
+      if (isPressed) {
+        _color = CustomColor.red;
+      } else {
+        _color = CustomColor.blue;
+      }
+      isPressed = !isPressed;
     });
   }
 
@@ -22,6 +31,7 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: _color,
         title: Text(widget.title),
       ),
       body: Center(
@@ -42,6 +52,7 @@ class _HomeViewState extends State<HomeView> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: Icon(Icons.add),
+        backgroundColor: _color,
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }

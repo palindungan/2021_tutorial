@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: CustomColor.red,
       ),
       home: HomeView(
-        title: "testing11",
+        title: 'testing11',
       ),
     );
   }
