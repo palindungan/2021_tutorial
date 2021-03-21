@@ -1,5 +1,6 @@
 import 'package:basic_app/src/tutorial/TutorialContainer.dart';
 import 'package:basic_app/src/tutorial/TutorialHeroAndClipRRect.dart';
+import 'package:basic_app/src/tutorial/TutorialText.dart';
 import 'package:flutter/material.dart';
 
 class Tutorial21Days extends StatelessWidget {
@@ -9,7 +10,7 @@ class Tutorial21Days extends StatelessWidget {
       appBar: AppBar(
         title: Text('flutter 21 days series'),
       ),
-      body: TutorialHeroAndClipRRect(),
+      body: TutorialText(),
     );
   }
 }
