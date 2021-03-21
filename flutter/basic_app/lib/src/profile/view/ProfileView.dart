@@ -20,6 +20,8 @@ class ProfileView extends StatelessWidget {
               'Flutter Learning',
               style: TextStyle(
                 fontSize: 30,
+                fontWeight: FontWeight.w900,
+                color: CustomColor.blue,
               ),
             ),
             SizedBox(
@@ -37,6 +39,7 @@ class ProfileView extends StatelessWidget {
               'Flutter Learning Project',
               style: TextStyle(
                 fontSize: 20,
+                fontWeight: FontWeight.w700,
               ),
             ),
             SizedBox(
@@ -136,11 +139,14 @@ class ProfileView extends StatelessWidget {
               onPressed: () {
                 onChangeView(context, EducationView());
               },
-              child: Text(
-                'Education Detail',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: CustomText.textButtonColor,
+              child: Padding(
+                padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
+                child: Text(
+                  'Education Detail',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: CustomText.textButtonColor,
+                  ),
                 ),
               ),
               color: CustomColor.blue,
