@@ -1,4 +1,5 @@
 import 'package:basic_app/src/education/view/EducationView.dart';
+import 'package:basic_app/src/tutorial/Tutorial21Days.dart';
 import 'package:basic_app/util/GeneralMethod.dart';
 import 'package:basic_app/util/layout/CustomColor.dart';
 import 'package:basic_app/util/layout/CustomIcon.dart';
@@ -143,6 +144,22 @@ class ProfileView extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
                 child: Text(
                   'Education Detail',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: CustomText.textButtonColor,
+                  ),
+                ),
+              ),
+              color: CustomColor.blue,
+            ),
+            MaterialButton(
+              onPressed: () {
+                onChangeView(context, Tutorial21Days());
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
+                child: Text(
+                  'Tutorial 21 days',
                   style: TextStyle(
                     fontSize: 20,
                     color: CustomText.textButtonColor,
