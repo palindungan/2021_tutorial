@@ -10,4 +10,5 @@ class CustomColor {
   static const orange = Colors.orange;
   static const greenAccent = Colors.greenAccent;
   static const orangeAccent = Colors.orangeAccent;
+  static const transparent = Colors.transparent;
 }

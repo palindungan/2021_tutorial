@@ -1,4 +1,5 @@
 import 'package:basic_app/src/home/view/HomeView.dart';
+import 'package:basic_app/src/profile/view/ProfileView.dart';
 import 'package:basic_app/util/layout/CustomColor.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: CustomColor.red,
       ),
-      home: HomeView(),
+      home: ProfileView(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

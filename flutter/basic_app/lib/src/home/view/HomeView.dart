@@ -74,7 +74,7 @@ class _HomeViewState extends State<HomeView> {
               children: [
                 Icon(
                   Icons.ac_unit,
-                  size: CustomIcon.icon1Size,
+                  size: CustomIcon.iconLblsize,
                 ),
                 Text(
                   'text here',
