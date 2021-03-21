@@ -12,4 +12,6 @@ class CustomText {
   static const double textFieldSize = 18;
   static const double textFieldHeight = 1.5;
   static const textFieldWeight = FontWeight.bold;
+
+  static const textButtonColor = CustomColor.white;
 }

@@ -1,3 +1,5 @@
+import 'package:basic_app/src/education/view/EducationView.dart';
+import 'package:basic_app/util/GeneralMethod.dart';
 import 'package:basic_app/util/layout/CustomColor.dart';
 import 'package:basic_app/util/layout/CustomIcon.dart';
 import 'package:basic_app/util/layout/CustomText.dart';
@@ -126,7 +128,23 @@ class ProfileView extends StatelessWidget {
                   ),
                 ],
               ),
-            )
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            MaterialButton(
+              onPressed: () {
+                onChangeView(context, EducationView());
+              },
+              child: Text(
+                'Education Detail',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: CustomText.textButtonColor,
+                ),
+              ),
+              color: CustomColor.blue,
+            ),
           ],
         ),
       ),
