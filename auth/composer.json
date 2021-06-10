@@ -1,6 +1,0 @@
-{
-    "require": {
-        "spatie/laravel-permission": "^4.2",
-        "laravelcollective/html": "^6.2"
-    }
-}
